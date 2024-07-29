@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
 
 interface TimelineEvent {
@@ -16,6 +16,11 @@ interface VerticalTimelineProps {
 
 const VerticalTimeline: React.FC<VerticalTimelineProps> = ({ data }) => {
   const ref = useRef<SVGSVGElement | null>(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  const updateIsMobile = () => {
+    setIsMobile(window.innerWidth <= 768);
+  };
 
   useEffect(() => {
     if (!ref.current) return;
@@ -29,8 +34,6 @@ const VerticalTimeline: React.FC<VerticalTimelineProps> = ({ data }) => {
       const containerWidth = ref.current?.parentElement?.clientWidth || 0;
       const width = containerWidth - margin.left - margin.right;
       let totalHeight = 0;
-
-      const isMobile = window.innerWidth <= 768 || containerWidth <= 768;
 
       const itemHeights: number[] = [];
       const paddingBetweenItems = isMobile ? 150 : 60;
@@ -137,15 +140,19 @@ const VerticalTimeline: React.FC<VerticalTimelineProps> = ({ data }) => {
     renderTimeline();
 
     const resizeObserver = new ResizeObserver(() => {
+      updateIsMobile();
       renderTimeline();
     });
 
     resizeObserver.observe(ref.current.parentElement as Element);
 
+    window.addEventListener("resize", updateIsMobile);
+
     return () => {
       resizeObserver.disconnect();
+      window.removeEventListener("resize", updateIsMobile);
     };
-  }, [data]);
+  }, [data, isMobile]);
 
   return <svg ref={ref} />;
 };
