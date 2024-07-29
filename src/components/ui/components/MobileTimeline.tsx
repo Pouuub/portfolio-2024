@@ -25,9 +25,16 @@ const MobileTimeline: React.FC<MobileTimelineProps> = ({ data }) => {
           >
             {item.date && <div className="text-center text-red text-lg mb-2">{item.date}</div>}
             {item.image && (
-              <Image loading="lazy" src={item.image} alt={item.event} width={100} height={80} className="py-2" />
+              <Image
+                loading="lazy"
+                src={item.image}
+                alt={item.event}
+                width={100}
+                height={100}
+                className="h-32 w-auto py-2"
+              />
             )}
-            <div className="font-bold text-base mb-2">{item.event}</div>
+            <div className="font-bold text-base my-2">{item.event}</div>
             {item.description && <div className="text-sm text-center text-gray-600">{item.description}</div>}
           </div>
         ))}
