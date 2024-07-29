@@ -34,7 +34,7 @@ const VerticalTimeline: React.FC<VerticalTimelineProps> = ({ data }) => {
 
       const itemHeights: number[] = [];
       const paddingBetweenItems = isMobile ? 150 : 60;
-      const itemWidth = isMobile ? width - 20 : 340;
+      const itemWidth = isMobile ? width - 40 : 340;
 
       data.forEach((d) => {
         const div = document.createElement("div");
