@@ -1,6 +1,7 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import * as d3 from "d3";
+import useWindowSize from "@/hooks/useWindowSize";
 
 interface TimelineEvent {
   date?: string;
@@ -16,13 +17,12 @@ interface VerticalTimelineProps {
 
 const VerticalTimeline: React.FC<VerticalTimelineProps> = ({ data }) => {
   const ref = useRef<SVGSVGElement | null>(null);
-  const [isMobile, setIsMobile] = useState(false);
+  const { width } = useWindowSize();
+  const isMobile = width !== undefined && width <= 768;
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
     if (!ref.current) return;
-    if (window.innerWidth <= 768) {
-      setIsMobile(true);
-    }
 
     const svg = d3.select(ref.current);
 
@@ -137,16 +137,6 @@ const VerticalTimeline: React.FC<VerticalTimelineProps> = ({ data }) => {
     };
 
     renderTimeline();
-
-    const resizeObserver = new ResizeObserver(() => {
-      renderTimeline();
-    });
-
-    resizeObserver.observe(ref.current.parentElement as Element);
-
-    return () => {
-      resizeObserver.disconnect();
-    };
   }, [data, isMobile]);
 
   return <svg ref={ref} />;
