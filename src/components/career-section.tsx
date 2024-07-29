@@ -72,15 +72,6 @@ export function CareerSection() {
       }`}
     >
       <div className="sm:container">
-        <div className="sticky top-0 flex justify-between pt-6 pb-2 px-4 border-b border-black sm:border-none sm:bg-transparent bg-white">
-          <h1 className="flex items-center text-xl font-bold tracking-tighter sm:text-4xl xl:text-5xl/none">
-            Parcours
-          </h1>
-          <div className="flex space-x-2">
-            <OutlineButton label="Retour" target="/" />
-            <PrimaryButton label="Poursuivre" target="/technology" />
-          </div>
-        </div>
         <div className="justify-center py-4 hidden md:flex">
           <VerticalTimeline data={data} />
         </div>

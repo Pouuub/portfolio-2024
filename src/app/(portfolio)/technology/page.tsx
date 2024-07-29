@@ -1,13 +1,8 @@
-import { CareerSection } from "@/components/career-section";
 import { TechnologySection } from "@/components/technology-section";
 import React from "react";
 
 const TechnologyPage = () => {
-  return (
-    <main>
-      <TechnologySection />
-    </main>
-  );
+  return <TechnologySection />;
 };
 
 export default TechnologyPage;

@@ -13,7 +13,7 @@ export function HeroSection() {
           <div className="flex flex-col justify-center">
             <div>
               <Image src="/images/logo-webexpr.svg" alt="Logo WebexpR" width={200} height={50} />
-              <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl xl:text-5xl/none my-6">
+              <h1 className="text-2xl font-bold tracking-tighter sm:text-4xl xl:text-5xl/none my-6">
                 Candidature spontanée
               </h1>
               <div className="flex justify-center sm:hidden">
@@ -39,7 +39,7 @@ export function HeroSection() {
                 <p className="col-start-2 col-end-8 content-center text-2xl font-semibold tracking-tighter sm:text-4xl text-center sm:text-left">
                   Anthony Tourolle - 20 ans
                 </p>
-                <p className="row-start-2 col-span-8 text-center sm:text-left sm:col-start-2 sm:col-span-7 text-lg leading-relaxed text-gray-500">
+                <p className="row-start-2 col-span-8 text-center sm:text-left sm:col-start-2 sm:col-span-7 leading-relaxed text-gray-500">
                   Alternant en 2ème année de Mastère Expert Informatique et Systèmes d&apos;Information (EISI)
                 </p>
               </div>

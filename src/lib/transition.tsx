@@ -15,7 +15,7 @@ export default function Transition({ children }: { children: React.ReactNode }) 
           key={pathname}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ ease: "easeInOut", duration: 0.6 }}
+          transition={{ ease: "easeInOut", duration: 0.5 }}
           onAnimationStart={() => setIsExiting(true)}
         >
           {children}

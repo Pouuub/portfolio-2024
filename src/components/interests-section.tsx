@@ -6,14 +6,6 @@ export function InterestsSection() {
   return (
     <section className="w-full md:flex md:items-center pb-8">
       <div className="sm:container">
-        <div className="sticky top-0 flex justify-between pt-6 pb-2 px-4 border-b border-black sm:border-none sm:bg-transparent bg-white">
-          <h1 className="flex items-center text-xl font-bold tracking-tighter sm:text-4xl xl:text-5xl">Intérêts</h1>
-          <div className="flex space-x-2 items-center">
-            <OutlineButton label="Retour" target="/technology" />
-            <PrimaryButton label="Accueil" target="/" />
-          </div>
-        </div>
-
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 p-8">
           <div className="border shadow-md rounded-lg p-4 ">
             <h2 className="text-xl font-bold">Professionnel</h2>
@@ -50,7 +42,7 @@ export function InterestsSection() {
                 >
                   <span className="space-y-8 mt-4 max-h-[80vh] flex flex-col overflow-y-scroll">
                     <span className="relative rounded-lg md:p-4 shadow-md">
-                      <span className="text-lg font-bold">Juin 2024</span>
+                      <span className="text-lg font-medium">Juin 2024</span>
                       <span className="absolute bottom-1/2 w-full flex justify-center -z-10">
                         <span className="text-sm font-light">Chargement...</span>
                       </span>
@@ -61,7 +53,7 @@ export function InterestsSection() {
                       ></iframe>
                     </span>
                     <span className="relative rounded-lg md:p-4 shadow-md">
-                      <span className="text-lg font-bold">Avril 2024</span>
+                      <span className="text-lg font-medium">Avril 2024</span>
                       <span className="absolute bottom-1/2 w-full flex justify-center -z-10">
                         <span className="text-sm font-light">Chargement...</span>
                       </span>
@@ -72,7 +64,7 @@ export function InterestsSection() {
                       ></iframe>
                     </span>
                     <span className="relative rounded-lg md:p-4 shadow-md">
-                      <span className="text-lg font-bold">Septembre 2023</span>
+                      <span className="text-lg font-medium">Septembre 2023</span>
                       <span className="absolute bottom-1/2 w-full flex justify-center -z-10">
                         <span className="text-sm font-light">Chargement...</span>
                       </span>
@@ -83,7 +75,7 @@ export function InterestsSection() {
                       ></iframe>
                     </span>
                     <span className="relative rounded-lg md:p-4 shadow-md">
-                      <span className="text-lg font-bold">Septembre 2022</span>
+                      <span className="text-lg font-medium">Septembre 2022</span>
                       <span className="absolute bottom-1/2 w-full flex justify-center -z-10">
                         <span className="text-sm font-light">Chargement...</span>
                       </span>

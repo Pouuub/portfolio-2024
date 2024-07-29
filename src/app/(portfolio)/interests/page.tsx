@@ -2,11 +2,7 @@ import { InterestsSection } from "@/components/interests-section";
 import React from "react";
 
 const InterestsPage = () => {
-  return (
-    <main>
-      <InterestsSection />
-    </main>
-  );
+  return <InterestsSection />;
 };
 
 export default InterestsPage;
