@@ -40,7 +40,7 @@ export function HeroSection() {
                   Anthony Tourolle - 20 ans
                 </p>
                 <p className="row-start-2 col-span-8 text-center sm:text-left sm:col-start-2 sm:col-span-7 text-lg leading-relaxed text-gray-500">
-                  Alternant en 2ème année de Mastère Expert Informatique et Systèmes d'Information (EISI)
+                  Alternant en 2ème année de Mastère Expert Informatique et Systèmes d&apos;Information (EISI)
                 </p>
               </div>
             </div>

@@ -21,20 +21,20 @@ export function InterestsSection() {
               <li>Spécialisé dans le développement web</li>
               <li>Maîtrise de JavaScript et TypeScript</li>
               <li>Utilisation du framework Next.js</li>
-              <li>Passionné par la résolution de problèmes et le développement d'interfaces utilisateur</li>
+              <li>Passionné par la résolution de problèmes et le développement d&apos;interfaces utilisateur</li>
               <div className="my-3">
                 <span className="font-semibold">Dernière expérience</span>
                 <ul className="mt-1 ml-4 list-disc list-inside custom-list">
-                  <li>Développement d'une application interne</li>
+                  <li>Développement d&apos;une application interne</li>
                   <li>Gestion de GitLab auto-hébergé avec CI/CD</li>
                   <li>Gestion de plusieurs machines virtuelles</li>
-                  <li>Mise en place d'un reverse proxy avec Docker</li>
+                  <li>Mise en place d&apos;un reverse proxy avec Docker</li>
                 </ul>
               </div>
               <div className="my-3">
                 <span className="font-semibold">Valeurs</span>
                 <ul className="mt-1 ml-4 list-disc list-inside custom-list">
-                  <li>Autonome et apprécié pour le travail d'équipe</li>
+                  <li>Autonome et apprécié pour le travail d&apos;équipe</li>
                   <li>Engagé dans un apprentissage continu</li>
                   <li>Intérêt pour le travail à distance</li>
                   <li>Actuellement en alternance</li>
