@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Modal from "./ui/components/Modal";
+import ContactModal from "./ui/components/ContactModal";
 
 export function InterestsSection() {
   return (
@@ -110,6 +111,9 @@ export function InterestsSection() {
               </div>
             </div>
           </div>
+        </div>
+        <div className="flex justify-center">
+          <ContactModal />
         </div>
       </div>
     </section>
