@@ -22,7 +22,7 @@ export function CareerSection() {
       description: "Développeur web & web mobile",
     },
     {
-      date: "avril - mai 2021",
+      date: "avril - mai 2022",
       event: "JCUBE.EU",
       side: "right",
       description: "Stage sur un projet Symfony 6",
