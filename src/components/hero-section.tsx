@@ -44,7 +44,7 @@ export function HeroSection() {
                 </p>
               </div>
             </div>
-            <div className="flex gap-6 min-[400px]:flex-row justify-end my-4">
+            <div className="flex gap-6 justify-center sm:justify-end my-4">
               <PrimaryButton label="Découvrir" target="/career" />
               <ContactModal />
             </div>

@@ -15,7 +15,7 @@ const Header = ({ title, previous_label, next_label, previous_page, next_page }:
       <Transition>
         <h1 className="flex items-center text-xl font-bold tracking-tighter sm:text-4xl xl:text-5xl/none">{title}</h1>
       </Transition>
-      <div className="flex space-x-2">
+      <div className="flex gap-2 sm:gap-4">
         <OutlineButton label={previous_label || "Retour"} target={previous_page} />
         <PrimaryButton label={next_label || "Poursuivre"} target={next_page} />
       </div>
