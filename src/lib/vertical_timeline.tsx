@@ -95,7 +95,7 @@ const VerticalTimeline: React.FC<VerticalTimelineProps> = ({ data }) => {
 
       eventGroup
         .append("foreignObject")
-        .attr("x", (d) => (isMobile ? -width / 2 + 20 : d.side === "left" ? -itemWidth - 10 : 10))
+        .attr("x", (d) => (isMobile ? -itemWidth / 2 : d.side === "left" ? -itemWidth - 10 : 10))
         .attr("y", -20)
         .attr("width", itemWidth)
         .attr("height", (d, i) => (d.image ? itemHeights[i] + 200 : itemHeights[i]))
@@ -107,31 +107,40 @@ const VerticalTimeline: React.FC<VerticalTimelineProps> = ({ data }) => {
         .style("border-radius", "8px")
         .style("background-color", "#f9f9f9")
         .style("box-sizing", "border-box")
-        .html(
-          (d) => `
-        <div style="width: 100%">
-          ${
-            d.date
-              ? `<div style="color: #d23d26; text-align: center; font-weight: bold; font-size: ${
-                  isMobile ? 12 : 14
-                }px; margin-bottom: 5px;">${d.date}</div>`
-              : ""
-          }
-          ${
-            d.image
-              ? `<img src="${d.image}" alt="${d.event}" style="display: block; margin: 0 auto; width: auto; height: auto; max-height: 80px; max-width: 100%; object-fit: cover; margin-bottom: 10px;">`
-              : ""
-          }
-          <div style="font-weight: bold; margin-bottom: 3px; font-size: ${isMobile ? 10 : 12}px;">${
-            isMobile ? "Mobile" : "Desktop"
-          }</div>
-          ${
-            d.description
-              ? `<div style="overflow-wrap: break-word; font-size: ${isMobile ? 10 : 12}px;">${d.description}</div>`
-              : ""
-          }
-        </div>
-          `
+        .html((d) =>
+          isMobile
+            ? `
+          <div style="width: 100%">
+            ${
+              d.date
+                ? `<div style="color: #d23d26; text-align: center; font-weight: bold; font-size: 12px; margin-bottom: 5px;">${d.date}</div>`
+                : ""
+            }
+            ${
+              d.image
+                ? `<img src="${d.image}" alt="${d.event}" style="display: block; margin: 0 auto; width: auto; height: auto; max-height: 60px; max-width: 100%; object-fit: cover; margin-bottom: 10px;">`
+                : ""
+            }
+            <div style="font-weight: bold; margin-bottom: 3px; font-size: 10px;">${d.event}</div>
+            ${d.description ? `<div style="overflow-wrap: break-word; font-size: 10px;">${d.description}</div>` : ""}
+          </div>
+            `
+            : `
+          <div style="width: 100%">
+            ${
+              d.date
+                ? `<div style="color: #d23d26; text-align: center; font-weight: bold; font-size: 14px; margin-bottom: 5px;">${d.date}</div>`
+                : ""
+            }
+            ${
+              d.image
+                ? `<img src="${d.image}" alt="${d.event}" style="display: block; margin: 0 auto; width: auto; height: auto; max-height: 80px; max-width: 100%; object-fit: cover; margin-bottom: 10px;">`
+                : ""
+            }
+            <div style="font-weight: bold; margin-bottom: 3px; font-size: 12px;">${d.event}</div>
+            ${d.description ? `<div style="overflow-wrap: break-word; font-size: 12px;">${d.description}</div>` : ""}
+          </div>
+            `
         );
 
       svg.attr("width", containerWidth).attr("height", totalHeight + paddingBetweenItems);
