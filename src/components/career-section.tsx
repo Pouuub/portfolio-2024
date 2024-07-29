@@ -64,7 +64,11 @@ export function CareerSection() {
   }, []);
 
   return (
-    <section className="w-full md:flex md:items-center px-4">
+    <section
+      className={`w-full md:flex md:items-center px-4 transition-all duration-500 ${
+        isLoading ? "opacity-0" : "opacity-100"
+      }`}
+    >
       <div className="container px-4 md:px-6 ">
         <div className="sticky top-0 flex justify-between pt-6 pb-2 border-b border-black sm:border-none sm:bg-transparent bg-white">
           <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl xl:text-5xl/none">Parcours</h1>
