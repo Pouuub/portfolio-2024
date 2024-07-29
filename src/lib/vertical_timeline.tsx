@@ -17,11 +17,10 @@ interface VerticalTimelineProps {
 
 const VerticalTimeline: React.FC<VerticalTimelineProps> = ({ data }) => {
   const ref = useRef<SVGSVGElement | null>(null);
-  const { width } = useWindowSize();
-  const isMobile = width !== undefined && width <= 768;
+  const { width: windowWidth } = useWindowSize();
+  const isMobile = windowWidth !== undefined && windowWidth <= 768;
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
     if (!ref.current) return;
 
     const svg = d3.select(ref.current);
@@ -96,7 +95,7 @@ const VerticalTimeline: React.FC<VerticalTimelineProps> = ({ data }) => {
 
       eventGroup
         .append("foreignObject")
-        .attr("x", (d) => (isMobile ? -width / 2 + 20 : d.side === "left" ? -itemWidth - 10 : 10))
+        .attr("x", (d) => (isMobile ? -itemWidth / 2 : d.side === "left" ? -itemWidth - 10 : 10))
         .attr("y", -20)
         .attr("width", itemWidth)
         .attr("height", (d, i) => (d.image ? itemHeights[i] + 200 : itemHeights[i]))
