@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { OutlineButton, PrimaryButton } from "./ui/components/Button";
+import { PrimaryButton } from "./ui/components/Button";
 import ContactModal from "./ui/components/ContactModal";
 
 export function HeroSection() {

@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import React, { ReactNode } from "react";
+import React from "react";
 
 interface ButtonProps {
   label: string;

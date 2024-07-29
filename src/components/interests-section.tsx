@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { OutlineButton, PrimaryButton } from "./ui/components/Button";
 import Modal from "./ui/components/Modal";
 
 export function InterestsSection() {

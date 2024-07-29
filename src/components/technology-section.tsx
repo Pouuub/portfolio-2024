@@ -1,12 +1,8 @@
 "use client";
-
-import { OutlineButton, PrimaryButton } from "./ui/components/Button";
-import { useEffect, useState } from "react";
 import VerticalTimeline from "./ui/components/Timeline";
 import MobileTimeline from "./ui/components/MobileTimeline";
 
 export function TechnologySection() {
-  const [isLoading, setIsLoading] = useState(true);
   const data: TimelineEvent[] = [
     {
       event: "macOS",
@@ -178,20 +174,8 @@ export function TechnologySection() {
     },
   ];
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 20);
-
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
-    <section
-      className={`w-full md:flex md:items-center transition-all duration-500 ${
-        isLoading ? "opacity-0" : "opacity-100"
-      }`}
-    >
+    <section className="w-full md:flex md:items-center transition-all duration-500">
       <div className="sm:container">
         <div className="justify-center py-4 hidden md:flex">
           <VerticalTimeline data={data} />
