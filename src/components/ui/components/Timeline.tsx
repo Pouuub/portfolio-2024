@@ -10,11 +10,11 @@ interface TimelineEvent {
   side?: "left" | "right";
 }
 
-interface VerticalTimelineProps {
+interface TimelineProps {
   data: TimelineEvent[];
 }
 
-const VerticalTimeline: React.FC<VerticalTimelineProps> = ({ data }) => {
+const Timeline: React.FC<TimelineProps> = ({ data }) => {
   const ref = useRef<SVGSVGElement | null>(null);
 
   useEffect(() => {
@@ -30,12 +30,9 @@ const VerticalTimeline: React.FC<VerticalTimelineProps> = ({ data }) => {
       const width = containerWidth - margin.left - margin.right;
       let totalHeight = 0;
 
-      const isMobile = window.innerWidth <= 768;
-      console.log(isMobile ? "Mobile" : "Desktop");
-
       const itemHeights: number[] = [];
-      const paddingBetweenItems = isMobile ? 150 : 60;
-      const itemWidth = isMobile ? width - 40 : 340;
+      const paddingBetweenItems = 60;
+      const itemWidth = 340;
 
       data.forEach((d) => {
         const div = document.createElement("div");
@@ -43,18 +40,14 @@ const VerticalTimeline: React.FC<VerticalTimelineProps> = ({ data }) => {
         div.style.position = "absolute";
         div.style.visibility = "hidden";
         div.innerHTML = `
-          <div style="text-align: center; font-weight: bold; font-size: ${isMobile ? 12 : 14}px; margin-bottom: 5px;">${
-          d.date || ""
-        }</div>
+          <div style="text-align: center; font-weight: bold; font-size: 14px; margin-bottom: 5px;">${d.date || ""}</div>
           ${
             d.image
-              ? `<img src="${d.image}" alt="${d.event}" style="width:100%; height: auto; max-height: ${
-                  isMobile ? 60 : 80
-                }px; object-fit: cover; margin-bottom: 5px;">`
+              ? `<img src="${d.image}" alt="${d.event}" style="width:100%; height: auto; max-height: 80px; object-fit: cover; margin-bottom: 5px;">`
               : ""
           }
-          <div style="font-weight: bold; margin-bottom: 3px; font-size: ${isMobile ? 10 : 12}px;">${d.event}</div>
-          <div style="overflow-wrap: break-word; font-size: ${isMobile ? 10 : 12}px;">${d.description}</div>
+          <div style="font-weight: bold; margin-bottom: 3px; font-size: 12px;">${d.event}</div>
+          <div style="overflow-wrap: break-word; font-size: 12px;">${d.description}</div>
         `;
         document.body.appendChild(div);
         const height = div.clientHeight + paddingBetweenItems;
@@ -95,7 +88,7 @@ const VerticalTimeline: React.FC<VerticalTimelineProps> = ({ data }) => {
 
       eventGroup
         .append("foreignObject")
-        .attr("x", (d) => (isMobile ? -itemWidth / 2 : d.side === "left" ? -itemWidth - 10 : 10))
+        .attr("x", (d) => (d.side === "left" ? -itemWidth - 10 : 10))
         .attr("y", -20)
         .attr("width", itemWidth)
         .attr("height", (d, i) => (d.image ? itemHeights[i] + 200 : itemHeights[i]))
@@ -107,40 +100,23 @@ const VerticalTimeline: React.FC<VerticalTimelineProps> = ({ data }) => {
         .style("border-radius", "8px")
         .style("background-color", "#f9f9f9")
         .style("box-sizing", "border-box")
-        .html((d) =>
-          isMobile
-            ? `
-          <div style="width: 100%">
-            ${
-              d.date
-                ? `<div style="color: #d23d26; text-align: center; font-weight: bold; font-size: 12px; margin-bottom: 5px;">${d.date}</div>`
-                : ""
-            }
-            ${
-              d.image
-                ? `<img src="${d.image}" alt="${d.event}" style="display: block; margin: 0 auto; width: auto; height: auto; max-height: 60px; max-width: 100%; object-fit: cover; margin-bottom: 10px;">`
-                : ""
-            }
-            <div style="font-weight: bold; margin-bottom: 3px; font-size: 10px;">${d.event}</div>
-            ${d.description ? `<div style="overflow-wrap: break-word; font-size: 10px;">${d.description}</div>` : ""}
-          </div>
-            `
-            : `
-          <div style="width: 100%">
-            ${
-              d.date
-                ? `<div style="color: #d23d26; text-align: center; font-weight: bold; font-size: 14px; margin-bottom: 5px;">${d.date}</div>`
-                : ""
-            }
-            ${
-              d.image
-                ? `<img src="${d.image}" alt="${d.event}" style="display: block; margin: 0 auto; width: auto; height: auto; max-height: 80px; max-width: 100%; object-fit: cover; margin-bottom: 10px;">`
-                : ""
-            }
-            <div style="font-weight: bold; margin-bottom: 3px; font-size: 12px;">${d.event}</div>
-            ${d.description ? `<div style="overflow-wrap: break-word; font-size: 12px;">${d.description}</div>` : ""}
-          </div>
-            `
+        .html(
+          (d) => `
+        <div style="width: 100%">
+          ${
+            d.date
+              ? `<div style="color: #d23d26; text-align: center; font-weight: bold; font-size: 14px; margin-bottom: 5px;">${d.date}</div>`
+              : ""
+          }
+          ${
+            d.image
+              ? `<img src="${d.image}" alt="${d.event}" style="display: block; margin: 0 auto; width: auto; height: auto; max-height: 80px; max-width: 100%; object-fit: cover; margin-bottom: 10px;">`
+              : ""
+          }
+          <div style="font-weight: bold; margin-bottom: 3px; font-size: 12px;">${d.event}</div>
+          ${d.description ? `<div style="overflow-wrap: break-word; font-size: 12px;">${d.description}</div>` : ""}
+        </div>
+          `
         );
 
       svg.attr("width", containerWidth).attr("height", totalHeight + paddingBetweenItems);
@@ -162,4 +138,4 @@ const VerticalTimeline: React.FC<VerticalTimelineProps> = ({ data }) => {
   return <svg ref={ref} />;
 };
 
-export default VerticalTimeline;
+export default Timeline;

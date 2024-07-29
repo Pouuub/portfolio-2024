@@ -1,7 +1,9 @@
 "use client";
-import VerticalTimeline from "@/lib/vertical_timeline";
+
 import { OutlineButton, PrimaryButton } from "./ui/components/Button";
 import { useEffect, useState } from "react";
+import VerticalTimeline from "./ui/components/Timeline";
+import MobileTimeline from "./ui/components/MobileTimeline";
 
 export function CareerSection() {
   const [isLoading, setIsLoading] = useState(true);
@@ -79,8 +81,11 @@ export function CareerSection() {
             <PrimaryButton label="Poursuivre" target="/technology" />
           </div>
         </div>
-        <div className="flex justify-center py-4">
+        <div className="justify-center py-4 hidden md:flex">
           <VerticalTimeline data={data} />
+        </div>
+        <div className="justify-center py-4 flex md:hidden">
+          <MobileTimeline data={data} />
         </div>
       </div>
     </section>
