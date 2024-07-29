@@ -11,7 +11,7 @@ export const PrimaryButton = ({ label, target, blank }: ButtonProps): JSX.Elemen
   return (
     <>
       {target ? (
-        <Link href={target} target={blank ? "_blank" : ""}>
+        <Link href={target} target={blank ? "_blank" : ""} className="cursor-pointer">
           <Button>{label}</Button>
         </Link>
       ) : (
@@ -25,7 +25,7 @@ export const OutlineButton = ({ label, target, blank }: ButtonProps): JSX.Elemen
   return (
     <>
       {target ? (
-        <Link href={target} target={blank ? "_blank" : ""}>
+        <Link href={target} target={blank ? "_blank" : ""} className="cursor-pointer">
           <Button variant="outline">{label}</Button>
         </Link>
       ) : (

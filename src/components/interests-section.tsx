@@ -4,9 +4,9 @@ import Modal from "./ui/components/Modal";
 
 export function InterestsSection() {
   return (
-    <section className="w-full md:flex md:items-center px-4 pb-8">
-      <div className="container">
-        <div className="sticky top-0 flex justify-between pt-6 pb-2 border-b border-black sm:border-none sm:bg-transparent bg-white">
+    <section className="w-full md:flex md:items-center pb-8">
+      <div className="sm:container">
+        <div className="sticky top-0 flex justify-between pt-6 pb-2 px-4 border-b border-black sm:border-none sm:bg-transparent bg-white">
           <h1 className="flex items-center text-xl font-bold tracking-tighter sm:text-4xl xl:text-5xl">Intérêts</h1>
           <div className="flex space-x-2 items-center">
             <OutlineButton label="Retour" target="/technology" />
@@ -14,7 +14,7 @@ export function InterestsSection() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 mt-6 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 p-8">
           <div className="border shadow-md rounded-lg p-4 ">
             <h2 className="text-xl font-bold">Professionnel</h2>
             <ul className="mt-2 text-sm list-disc list-inside custom-list">
@@ -34,7 +34,7 @@ export function InterestsSection() {
               <div className="my-3">
                 <span className="font-semibold">Valeurs</span>
                 <ul className="mt-1 ml-4 list-disc list-inside custom-list">
-                  <li>Autonome et apprécié pour le travail d&apos;équipe</li>
+                  <li>Autonome et apprécie le travail d&apos;équipe</li>
                   <li>Engagé dans un apprentissage continu</li>
                   <li>Intérêt pour le travail à distance</li>
                   <li>Actuellement en alternance</li>
@@ -45,36 +45,48 @@ export function InterestsSection() {
               <div className="flex justify-center my-6">
                 <Modal
                   label="Découvrir mes projets d'études"
-                  dialog_title="Projets d'études"
+                  dialog_title="4 projets d'études"
                   btn_class="px-4 py-3 text-sm bg-black text-white rounded-md hover:bg-black/80 transition-all"
                 >
-                  <span className="space-y-8 mt-8 max-h-[80vh] flex flex-col overflow-y-scroll">
-                    <span className="rounded-lg md:p-4 shadow-md">
+                  <span className="space-y-8 mt-4 max-h-[80vh] flex flex-col overflow-y-scroll">
+                    <span className="relative rounded-lg md:p-4 shadow-md">
                       <span className="text-lg font-bold">Juin 2024</span>
+                      <span className="absolute bottom-1/2 w-full flex justify-center -z-10">
+                        <span className="text-sm font-light">Chargement...</span>
+                      </span>
                       <iframe
                         src="https://docs.google.com/presentation/d/e/2PACX-1vTX_qyXOUWGwpxHGlbK_hqfQ2X_ADnaKJ_sUqnV1-I-7cpQ85BWkBfRozkHNoZtApN89YOMFTo9uukz/embed?start=false&loop=true&delayms=3000"
                         className="w-full h-56"
                         allowFullScreen={true}
                       ></iframe>
                     </span>
-                    <span className="rounded-lg md:p-4 shadow-md">
+                    <span className="relative rounded-lg md:p-4 shadow-md">
                       <span className="text-lg font-bold">Avril 2024</span>
+                      <span className="absolute bottom-1/2 w-full flex justify-center -z-10">
+                        <span className="text-sm font-light">Chargement...</span>
+                      </span>
                       <iframe
                         src="https://docs.google.com/presentation/d/e/2PACX-1vRB85hROeNHkTgQKHYCrl3Uppoj4DjQOlILvc5InWvVfQUZR7-E7moEqXt8YHHw8Wk5jSpo4UuweT4S/embed?start=false&loop=true&delayms=3000"
                         className="w-full h-56"
                         allowFullScreen={true}
                       ></iframe>
                     </span>
-                    <span className="rounded-lg md:p-4 shadow-md">
+                    <span className="relative rounded-lg md:p-4 shadow-md">
                       <span className="text-lg font-bold">Septembre 2023</span>
+                      <span className="absolute bottom-1/2 w-full flex justify-center -z-10">
+                        <span className="text-sm font-light">Chargement...</span>
+                      </span>
                       <iframe
                         src="https://docs.google.com/presentation/d/e/2PACX-1vTj9dwS6a3AWjQeNwWoDEYvWNBcuHZzX3DFiGMMeO9CRuPsipV8xu_qtjDPiJTCOTE3_Hzur7DiOS7w/embed?start=false&loop=true&delayms=3000"
                         className="w-full h-56"
                         allowFullScreen={true}
                       ></iframe>
                     </span>
-                    <span className="rounded-lg md:p-4 shadow-md">
+                    <span className="relative rounded-lg md:p-4 shadow-md">
                       <span className="text-lg font-bold">Septembre 2022</span>
+                      <span className="absolute bottom-1/2 w-full flex justify-center -z-10">
+                        <span className="text-sm font-light">Chargement...</span>
+                      </span>
                       <iframe
                         src="https://docs.google.com/presentation/d/e/2PACX-1vQrzuF37rP19ZjL1rVOsB1YoQERxm6T50Kppto9AMgQ5gCyPfxk6jBLddKasP14Szccv2-lNx1CFZ5I/embed?start=false&loop=true&delayms=3000"
                         className="w-full h-56"
