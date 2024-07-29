@@ -7,7 +7,7 @@ export function InterestsSection() {
     <section className="w-full md:flex md:items-center px-4 pb-8">
       <div className="container px-4 md:px-6">
         <div className="sticky top-0 flex justify-between pt-6 pb-2 border-b border-black sm:border-none sm:bg-transparent bg-white">
-          <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl xl:text-5xl">Intérêts</h1>
+          <h1 className="flex items-center text-2xl font-bold tracking-tighter sm:text-4xl xl:text-5xl">Intérêts</h1>
           <div className="flex space-x-2 items-center">
             <OutlineButton label="Retour" target="/technology" />
             <PrimaryButton label="Accueil" target="/" />

@@ -2,7 +2,19 @@
 import React, { useEffect, useRef } from "react";
 import * as d3 from "d3";
 
-const VerticalTimeline = ({ data }: VerticalTimelineProps) => {
+interface TimelineEvent {
+  date?: string;
+  image?: string;
+  event: string;
+  description?: string;
+  side?: "left" | "right";
+}
+
+interface VerticalTimelineProps {
+  data: TimelineEvent[];
+}
+
+const VerticalTimeline: React.FC<VerticalTimelineProps> = ({ data }) => {
   const ref = useRef<SVGSVGElement | null>(null);
 
   useEffect(() => {
@@ -11,20 +23,19 @@ const VerticalTimeline = ({ data }: VerticalTimelineProps) => {
     const svg = d3.select(ref.current);
 
     const renderTimeline = () => {
-      svg.selectAll("*").remove(); // Clear previous contents
+      svg.selectAll("*").remove();
 
       const margin = { top: 20, right: 20, bottom: 20, left: 20 };
       const containerWidth = ref.current?.parentElement?.clientWidth || 0;
       const width = containerWidth - margin.left - margin.right;
       let totalHeight = 0;
 
-      const isMobile = window.innerWidth <= 768; // Check if the screen size is mobile
+      const isMobile = window.innerWidth <= 768;
 
       const itemHeights: number[] = [];
-      const paddingBetweenItems = isMobile ? 150 : 60; // Adjusted padding for mobile
-      const itemWidth = isMobile ? width - 20 : 340; // Adjusted width for mobile
+      const paddingBetweenItems = isMobile ? 150 : 60;
+      const itemWidth = isMobile ? width - 20 : 340;
 
-      // Calculate the height of each item and the total height
       data.forEach((d) => {
         const div = document.createElement("div");
         div.style.width = `${itemWidth}px`;
@@ -120,7 +131,6 @@ const VerticalTimeline = ({ data }: VerticalTimelineProps) => {
           `
         );
 
-      // Update the SVG height based on the total height of all elements
       svg.attr("width", containerWidth).attr("height", totalHeight + paddingBetweenItems);
     };
 
