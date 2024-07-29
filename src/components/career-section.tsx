@@ -2,7 +2,6 @@
 import VerticalTimeline from "@/lib/vertical_timeline";
 import { OutlineButton, PrimaryButton } from "./ui/components/Button";
 import { useEffect, useState } from "react";
-import Loader from "./ui/components/Loader/Loader";
 
 export function CareerSection() {
   const [isLoading, setIsLoading] = useState(true);
@@ -74,15 +73,9 @@ export function CareerSection() {
             <PrimaryButton label="Poursuivre" target="/technology" />
           </div>
         </div>
-        {isLoading ? (
-          <div className="flex justify-center items-center py-4">
-            <Loader />
-          </div>
-        ) : (
-          <div className="flex justify-center py-4">
-            <VerticalTimeline data={data} />
-          </div>
-        )}
+        <div className="flex justify-center py-4">
+          <VerticalTimeline data={data} />
+        </div>
       </div>
     </section>
   );
