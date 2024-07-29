@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import * as d3 from "d3";
-import useWindowSize from "@/hooks/useWindowSize";
 
 interface TimelineEvent {
   date?: string;
@@ -17,8 +16,6 @@ interface VerticalTimelineProps {
 
 const VerticalTimeline: React.FC<VerticalTimelineProps> = ({ data }) => {
   const ref = useRef<SVGSVGElement | null>(null);
-  const { width: windowWidth } = useWindowSize();
-  const isMobile = windowWidth !== undefined && windowWidth <= 768;
 
   useEffect(() => {
     if (!ref.current) return;
@@ -32,6 +29,9 @@ const VerticalTimeline: React.FC<VerticalTimelineProps> = ({ data }) => {
       const containerWidth = ref.current?.parentElement?.clientWidth || 0;
       const width = containerWidth - margin.left - margin.right;
       let totalHeight = 0;
+
+      const isMobile = window.innerWidth <= 768;
+      console.log(isMobile ? "Mobile" : "Desktop");
 
       const itemHeights: number[] = [];
       const paddingBetweenItems = isMobile ? 150 : 60;
@@ -95,7 +95,7 @@ const VerticalTimeline: React.FC<VerticalTimelineProps> = ({ data }) => {
 
       eventGroup
         .append("foreignObject")
-        .attr("x", (d) => (isMobile ? -itemWidth / 2 : d.side === "left" ? -itemWidth - 10 : 10))
+        .attr("x", (d) => (isMobile ? -width / 2 + 20 : d.side === "left" ? -itemWidth - 10 : 10))
         .attr("y", -20)
         .attr("width", itemWidth)
         .attr("height", (d, i) => (d.image ? itemHeights[i] + 200 : itemHeights[i]))
@@ -122,7 +122,9 @@ const VerticalTimeline: React.FC<VerticalTimelineProps> = ({ data }) => {
               ? `<img src="${d.image}" alt="${d.event}" style="display: block; margin: 0 auto; width: auto; height: auto; max-height: 80px; max-width: 100%; object-fit: cover; margin-bottom: 10px;">`
               : ""
           }
-          <div style="font-weight: bold; margin-bottom: 3px; font-size: ${isMobile ? 10 : 12}px;">${d.event}</div>
+          <div style="font-weight: bold; margin-bottom: 3px; font-size: ${isMobile ? 10 : 12}px;">${
+            isMobile ? "Mobile" : "Desktop"
+          }</div>
           ${
             d.description
               ? `<div style="overflow-wrap: break-word; font-size: ${isMobile ? 10 : 12}px;">${d.description}</div>`
@@ -136,7 +138,17 @@ const VerticalTimeline: React.FC<VerticalTimelineProps> = ({ data }) => {
     };
 
     renderTimeline();
-  }, [data, isMobile]);
+
+    const resizeObserver = new ResizeObserver(() => {
+      renderTimeline();
+    });
+
+    resizeObserver.observe(ref.current.parentElement as Element);
+
+    return () => {
+      resizeObserver.disconnect();
+    };
+  }, [data]);
 
   return <svg ref={ref} />;
 };
