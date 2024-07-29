@@ -16,14 +16,13 @@ interface VerticalTimelineProps {
 
 const VerticalTimeline: React.FC<VerticalTimelineProps> = ({ data }) => {
   const ref = useRef<SVGSVGElement | null>(null);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-
-  const updateIsMobile = () => {
-    setIsMobile(window.innerWidth <= 768);
-  };
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     if (!ref.current) return;
+    if (window.innerWidth <= 768) {
+      setIsMobile(true);
+    }
 
     const svg = d3.select(ref.current);
 
@@ -140,17 +139,13 @@ const VerticalTimeline: React.FC<VerticalTimelineProps> = ({ data }) => {
     renderTimeline();
 
     const resizeObserver = new ResizeObserver(() => {
-      updateIsMobile();
       renderTimeline();
     });
 
     resizeObserver.observe(ref.current.parentElement as Element);
 
-    window.addEventListener("resize", updateIsMobile);
-
     return () => {
       resizeObserver.disconnect();
-      window.removeEventListener("resize", updateIsMobile);
     };
   }, [data, isMobile]);
 
