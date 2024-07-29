@@ -19,7 +19,7 @@ const PortfolioLayout = ({ children }: { children: React.ReactNode }) => {
       next_page: "/interests",
     },
     "/interests": {
-      title: "Intêrets",
+      title: "Intérêts",
       next_label: "Accueil",
       previous_page: "/technology",
       next_page: "/",
