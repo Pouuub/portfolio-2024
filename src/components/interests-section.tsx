@@ -5,9 +5,9 @@ import Modal from "./ui/components/Modal";
 export function InterestsSection() {
   return (
     <section className="w-full md:flex md:items-center px-4 pb-8">
-      <div className="container px-4 md:px-6">
+      <div className="container">
         <div className="sticky top-0 flex justify-between pt-6 pb-2 border-b border-black sm:border-none sm:bg-transparent bg-white">
-          <h1 className="flex items-center text-2xl font-bold tracking-tighter sm:text-4xl xl:text-5xl">Intérêts</h1>
+          <h1 className="flex items-center text-xl font-bold tracking-tighter sm:text-4xl xl:text-5xl">Intérêts</h1>
           <div className="flex space-x-2 items-center">
             <OutlineButton label="Retour" target="/technology" />
             <PrimaryButton label="Accueil" target="/" />
@@ -15,7 +15,7 @@ export function InterestsSection() {
         </div>
 
         <div className="grid grid-cols-1 gap-4 mt-6 sm:grid-cols-2">
-          <div className="border border-black rounded-lg p-4 shadow-sm">
+          <div className="border shadow-md rounded-lg p-4 ">
             <h2 className="text-xl font-bold">Professionnel</h2>
             <ul className="mt-2 text-sm list-disc list-inside custom-list">
               <li>Spécialisé dans le développement web</li>
@@ -86,7 +86,7 @@ export function InterestsSection() {
               </div>
             </ul>
           </div>
-          <div className="border border-black rounded-lg p-4 shadow-sm">
+          <div className="border shadow-md rounded-lg p-4">
             <h2 className="text-xl font-bold">Personnel</h2>
             <div className="my-8 ml-4 space-y-8">
               <div className="flex items-center">

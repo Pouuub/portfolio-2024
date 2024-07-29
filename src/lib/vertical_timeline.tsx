@@ -30,7 +30,7 @@ const VerticalTimeline: React.FC<VerticalTimelineProps> = ({ data }) => {
       const width = containerWidth - margin.left - margin.right;
       let totalHeight = 0;
 
-      const isMobile = window.innerWidth <= 768;
+      const isMobile = window.innerWidth <= 768 || containerWidth <= 768;
 
       const itemHeights: number[] = [];
       const paddingBetweenItems = isMobile ? 150 : 60;

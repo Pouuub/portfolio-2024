@@ -71,7 +71,7 @@ export function CareerSection() {
     >
       <div className="container">
         <div className="sticky top-0 flex justify-between pt-6 pb-2 border-b border-black sm:border-none sm:bg-transparent bg-white">
-          <h1 className="flex items-center text-2xl font-bold tracking-tighter sm:text-4xl xl:text-5xl/none">
+          <h1 className="flex items-center text-xl font-bold tracking-tighter sm:text-4xl xl:text-5xl/none">
             Parcours
           </h1>
           <div className="flex space-x-2">
