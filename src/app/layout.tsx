@@ -10,7 +10,7 @@ const fontSans = FontSans({
 
 export const metadata: Metadata = {
   title: "Portfolio - A.Tourolle",
-  description: "Candidature spontanée chez WebexpR",
+  description: "Portfolio 2024",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

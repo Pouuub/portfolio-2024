@@ -5,7 +5,7 @@ import { calculateYearsSince } from "@/lib/utils";
 
 export function HeroSection() {
   return (
-    <section className="w-full md:h-screen md:flex md:items-center px-4">
+    <section className="w-full h-screen flex items-center px-4">
       <div className="container px-4 md:px-6">
         <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-16 xl:grid-cols-[1fr_650px]">
           <div className="flex justify-center overflow-hidden sm:w-full lg:order-last">
@@ -42,10 +42,10 @@ export function HeroSection() {
                   />
                 </div>
 
-                <p className="col-start-2 col-end-8 content-center text-2xl font-semibold tracking-tighter sm:text-4xl text-center sm:text-left">
+                <p className="col-start-2 col-end-8 content-center text-3xl font-semibold tracking-tighter sm:text-4xl text-center sm:text-left">
                   Anthony Tourolle - {calculateYearsSince(new Date("2003-08-16"))} ans
                 </p>
-                <p className="row-start-2 col-span-8 text-center sm:text-left sm:col-start-2 sm:col-span-7 leading-relaxed text-gray-500">
+                <p className="row-start-2 col-span-8 text-center text-lg sm:text-xl sm:text-left sm:col-start-2 sm:col-span-7 leading-relaxed text-gray-500">
                   Alternant en 2ème année de Mastère Expert Informatique et Systèmes d&apos;Information (EISI)
                 </p>
               </div>

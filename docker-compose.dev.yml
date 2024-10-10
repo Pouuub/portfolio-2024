@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   app:
-    container_name: vitrine_webexpr
+    container_name: vitrine_portfolio
     build:
       context: ./
       dockerfile: Dockerfile.dev

@@ -24,7 +24,7 @@ const ContactModal = () => {
             target="https://www.linkedin.com/in/anthony-tourolle-b7136126a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
             blank={true}
           ></PrimaryButton>
-          <PrimaryButton label="Code Source" target="https://github.com/Pouuub/candidature-webexpr.git" blank={true} />
+          <PrimaryButton label="Code Source" target="https://github.com/Pouuub/portfolio-2024" blank={true} />
         </span>
       </span>
     </Modal>

@@ -4,7 +4,7 @@ import React from "react";
 
 const LandingPage = () => {
   return (
-    <main>
+    <main className="h-screen flex align-middle justify-center">
       <Transition>
         <HeroSection />
       </Transition>
