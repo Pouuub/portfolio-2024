@@ -74,6 +74,6 @@
 
 @layer components {
   .custom-list li::marker {
-    @apply text-red;
+    @apply text-green;
   }
 }

@@ -13,7 +13,7 @@ export function InterestsSection() {
               <li>Spécialisé dans le développement web</li>
               <li>Maîtrise de JavaScript et TypeScript</li>
               <li>Utilisation du framework Next.js</li>
-              <li>Passionné par la résolution de problèmes et le développement d&apos;interfaces utilisateur</li>
+              <li>Intéressé par la résolution de problèmes et le développement d&apos;interfaces utilisateur</li>
               <div className="my-3">
                 <span className="font-semibold">Dernière expérience</span>
                 <ul className="mt-1 ml-4 list-disc list-inside custom-list">

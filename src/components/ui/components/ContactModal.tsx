@@ -4,15 +4,15 @@ import { PrimaryButton } from "./Button";
 
 const ContactModal = () => {
   return (
-    <Modal label="En savoir plus..." dialog_title="Contact" btn_class="underline hover:text-red transition-all">
+    <Modal label="En savoir plus..." dialog_title="Contact" btn_class="underline hover:text-green transition-all">
       <span className="flex flex-col items-center space-y-4">
         <span className="text-lg font-light">
-          <a className="hover:text-red transition-all" href="mailto:a.tourolle.pro@gmail.com">
+          <a className="hover:text-green transition-all" href="mailto:a.tourolle.pro@gmail.com">
             a.tourolle.pro@gmail.com
           </a>
         </span>
         <span className="text-lg font-light">
-          <a className="hover:text-red transition-all" href="tel:+33681143654">
+          <a className="hover:text-green transition-all" href="tel:+33681143654">
             +33681143654
           </a>
         </span>

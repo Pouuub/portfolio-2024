@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { PrimaryButton } from "./ui/components/Button";
 import ContactModal from "./ui/components/ContactModal";
+import { calculateYearsSince } from "@/lib/utils";
 
 export function HeroSection() {
   return (
@@ -19,10 +20,6 @@ export function HeroSection() {
           </div>
           <div className="flex flex-col justify-center">
             <div>
-              <Image loading="lazy" src="/images/logo-webexpr.svg" alt="Logo WebexpR" width={200} height={50} />
-              <h1 className="text-2xl font-bold tracking-tighter sm:text-4xl xl:text-5xl/none my-6">
-                Candidature spontanée
-              </h1>
               <div className="flex justify-center sm:hidden">
                 <Image
                   loading="lazy"
@@ -30,7 +27,7 @@ export function HeroSection() {
                   alt="Avatar"
                   width={60}
                   height={60}
-                  className="rounded-full border border-red-600 align-top"
+                  className="rounded-full border border-green align-top"
                 />
               </div>
               <div className="grid grid-cols-8 grid-rows-2 gap-2">
@@ -41,12 +38,12 @@ export function HeroSection() {
                     alt="Avatar"
                     width={60}
                     height={60}
-                    className="hidden sm:block rounded-full border border-red-600 align-top"
+                    className="hidden sm:block rounded-full border border-green align-top"
                   />
                 </div>
 
                 <p className="col-start-2 col-end-8 content-center text-2xl font-semibold tracking-tighter sm:text-4xl text-center sm:text-left">
-                  Anthony Tourolle - 20 ans
+                  Anthony Tourolle - {calculateYearsSince(new Date("2003-08-16"))} ans
                 </p>
                 <p className="row-start-2 col-span-8 text-center sm:text-left sm:col-start-2 sm:col-span-7 leading-relaxed text-gray-500">
                   Alternant en 2ème année de Mastère Expert Informatique et Systèmes d&apos;Information (EISI)

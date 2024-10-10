@@ -85,7 +85,7 @@ const Timeline: React.FC<TimelineProps> = ({ data }) => {
             return `translate(${width / 2},${yOffset})`;
           });
 
-        eventGroup.append("circle").attr("r", 4).attr("fill", "#d23d26");
+        eventGroup.append("circle").attr("r", 4).attr("fill", "#679436");
 
         eventGroup
           .append("foreignObject")
@@ -106,7 +106,7 @@ const Timeline: React.FC<TimelineProps> = ({ data }) => {
         <div style="width: 100%">
           ${
             d.date
-              ? `<div style="color: #d23d26; text-align: center; font-weight: bold; font-size: 14px; margin-bottom: 5px;">${d.date}</div>`
+              ? `<div style="color: #243119; text-align: center; font-weight: bold; font-size: 14px; margin-bottom: 5px;">${d.date}</div>`
               : ""
           }
           ${

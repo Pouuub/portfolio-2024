@@ -23,7 +23,7 @@ const MobileTimeline: React.FC<MobileTimelineProps> = ({ data }) => {
             key={index}
             className="relative flex flex-col items-center bg-white border border-gray-300 rounded-lg p-4 shadow-md w-4/5 max-w-md"
           >
-            {item.date && <div className="text-center text-red text-lg mb-2">{item.date}</div>}
+            {item.date && <div className="text-center text-green text-lg mb-2">{item.date}</div>}
             {item.image && (
               <Image
                 loading="lazy"
