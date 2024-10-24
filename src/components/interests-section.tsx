@@ -94,19 +94,19 @@ export function InterestsSection() {
             <h2 className="text-xl font-bold">Personnel</h2>
             <div className="my-8 ml-4 space-y-8">
               <div className="flex items-center">
-                <Image loading="lazy" src="/images/drumsticks.webp" alt="Drumsticks" width={50} height={40} />
+                <Image src="/images/drumsticks.webp" alt="Drumsticks" width={50} height={40} />
                 <p className="text-lg font-light ml-8">Batterie et musique</p>
               </div>
               <div className="flex items-center">
-                <Image loading="lazy" src="/images/backpack.webp" alt="Backpack" width={50} height={40} />
+                <Image src="/images/backpack.webp" alt="Backpack" width={50} height={40} />
                 <p className="text-lg font-light ml-8">Voyages et découvertes</p>
               </div>
               <div className="flex items-center">
-                <Image loading="lazy" src="/images/ticket.webp" alt="Ticket" width={50} height={40} />
+                <Image src="/images/ticket.webp" alt="Ticket" width={50} height={40} />
                 <p className="text-lg font-light ml-8">Concerts et festivals</p>
               </div>
               <div className="flex items-center">
-                <Image loading="lazy" src="/images/laptop.webp" alt="Laptop" width={50} height={40} />
+                <Image src="/images/laptop.webp" alt="Laptop" width={50} height={40} />
                 <p className="text-lg font-light ml-8">Développement et programmation</p>
               </div>
             </div>

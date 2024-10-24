@@ -9,20 +9,12 @@ export function HeroSection() {
       <div className="container px-4 md:px-6">
         <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-16 xl:grid-cols-[1fr_650px]">
           <div className="flex justify-center overflow-hidden sm:w-full lg:order-last">
-            <Image
-              loading="lazy"
-              src="/images/hero-image.webp"
-              alt="Hero Image"
-              width={650}
-              height={650}
-              className="object-contain"
-            />
+            <Image src="/images/hero-image.webp" alt="Hero Image" width={650} height={650} className="object-contain" />
           </div>
           <div className="flex flex-col justify-center">
             <div>
               <div className="flex justify-center sm:hidden">
                 <Image
-                  loading="lazy"
                   src="/images/avatar.webp"
                   alt="Avatar"
                   width={60}
@@ -33,7 +25,6 @@ export function HeroSection() {
               <div className="grid grid-cols-8 grid-rows-2 gap-2">
                 <div className="content-center col-span-1">
                   <Image
-                    loading="lazy"
                     src="/images/avatar.webp"
                     alt="Avatar"
                     width={60}
