@@ -51,8 +51,8 @@ export function CareerSection() {
       description: "Mastère Expert Informatique et Systèmes d'Information (EISI)",
     },
     {
-      date: "octobre 2023 - ...",
-      event: "Premier emploi",
+      date: "octobre 2023 - août 2024",
+      event: "Premier contrat",
       side: "left",
       image: "/images/logo-uimm.webp",
       description: "Alternance à l'UIMM Champagne-Ardenne",
