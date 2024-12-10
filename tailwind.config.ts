@@ -18,8 +18,8 @@ const config = {
         sans: ["var(--font-sans)", ...fontFamily.sans],
       },
       colors: {
-        green: "#679436",
-        shadowgreen: "#243119",
+        green: "#508c5a",
+        shadowgreen: "#3c705a",
         grey: "#b0b4b6",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
