@@ -20,7 +20,7 @@ export function InterestsSection() {
                   <li>Développement d&apos;une application interne</li>
                   <li>Gestion de GitLab auto-hébergé avec CI/CD</li>
                   <li>Gestion de plusieurs machines virtuelles</li>
-                  <li>Mise en place d&apos;un reverse proxy avec Docker</li>
+                  <li>Mise en place d&apos;un reverse proxy avec Docker/Traefik </li>
                 </ul>
               </div>
               <div className="my-3">
@@ -29,7 +29,6 @@ export function InterestsSection() {
                   <li>Autonome et apprécie le travail d&apos;équipe</li>
                   <li>Engagé dans un apprentissage continu</li>
                   <li>Intérêt pour le travail à distance</li>
-                  <li>Actuellement en alternance</li>
                   <li>Objectif : continuer à explorer les technologies web et contribuer à des projets challengeant</li>
                 </ul>
               </div>
@@ -95,7 +94,7 @@ export function InterestsSection() {
             <div className="my-8 ml-4 space-y-8">
               <div className="flex items-center">
                 <Image src="/images/drumsticks.webp" alt="Drumsticks" width={50} height={40} priority={true} />
-                <p className="text-lg font-light ml-8">Batterie et musique</p>
+                <p className="text-lg font-light ml-8">Musique</p>
               </div>
               <div className="flex items-center">
                 <Image src="/images/backpack.webp" alt="Backpack" width={50} height={40} priority={true} />
